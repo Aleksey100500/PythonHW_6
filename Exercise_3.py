@@ -5,21 +5,20 @@
 
 # out
 
-# {'А': ['Алина'], 'Б': ['Бибочка'], 'И': ['Иван', 'Илья'], 'М': ['Марина', 'Мария'], 'П': ['Петр', 'Петр']}
-names = "Иван", "Мария", "Петр", "Илья", "Марина", "Петр", "Алина", "Бибочка"
-sorted_names = sorted(names)
-result_letters = []
-for name in sorted_names:
-    result_letters.append(name[0])
-its_names_d = dict.fromkeys(result_letters)
-for key in its_names_d:
-    i = 0
-    # for name in sorted_names:
-    if key != sorted_names[i]:
-        its_names_d[key] = sorted_names
-        i += 1
-def function(name):
-    return name[0]  
+def names_sort(names):
+    sorted_names = sorted(names)
+    return sorted_names
 
-print(its_names_d)
+def new_dict(spisok_imen_sortirovanii):
+    its_names_d = {}
+    for name in spisok_imen_sortirovanii:
+        key_d = name[0]
+        if key_d not in its_names_d:
+            its_names_d[key_d] = []
+        its_names_d[key_d].append(name)
+    return its_names_d
 
+def Main():
+    names = "Иван", "Мария", "Петр", "Илья", "Марина", "Петр", "Алина", "Бибочка"
+    print(new_dict(names_sort(names)))
+Main()
