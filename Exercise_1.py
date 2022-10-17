@@ -13,7 +13,7 @@
 # [28, 20, 10, 5, 1, 24, 7, 15, 23, 25]
 # [24, 15, 23, 25]
 from random import randint
-import sys
+
 
 def get_number(chislo):
     try:    
